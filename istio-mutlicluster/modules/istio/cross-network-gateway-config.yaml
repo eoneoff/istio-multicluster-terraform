@@ -1,0 +1,6 @@
+env:
+  ISTIO_META_REQUESTED_NETWORK_VIEW: ${network}
+labels:
+  istio: eastwestgateway
+  topology.istio.io/network: ${network}
+networkGateway: ${network}

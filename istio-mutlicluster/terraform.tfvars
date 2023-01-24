@@ -1,0 +1,5 @@
+kubeconfig_path = ""
+ca_data_west = ""
+ca_data_east = ""
+server_west = ""
+server_east = ""

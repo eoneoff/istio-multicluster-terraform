@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  app: nginx
+  labels:
+    app: nginx
+    sidecar.istio.io/inject: "true"
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+      - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+  - port: 80
+    targetPort: 80
+    name: http
+  type: ClusterIP
